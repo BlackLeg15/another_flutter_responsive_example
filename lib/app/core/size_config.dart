@@ -1,6 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
-class SizeConfig {
+class SizeConfig extends Equatable {
+  final BoxConstraints constraints;
+  final Orientation orientation;
+
   late final double _screenWidth;
   late final double _screenHeight;
   late final double _blockWidth;
@@ -13,11 +17,11 @@ class SizeConfig {
   late final bool isPortrait;
   late final bool isMobilePortrait;
 
-  SizeConfig(BoxConstraints constraints, Orientation orientation) {
-    init(constraints, orientation);
+  SizeConfig(this.constraints, this.orientation) {
+    init();
   }
 
-  void init(BoxConstraints constraints, Orientation orientation) {
+  void init() {
     if (orientation == Orientation.portrait) {
       _screenWidth = constraints.maxWidth;
       _screenHeight = constraints.maxHeight;
@@ -40,4 +44,7 @@ class SizeConfig {
     heightMultiplier = _blockHeight;
     widthMultiplier = _blockWidth;
   }
+
+  @override
+  List<Object?> get props => [constraints, orientation];
 }

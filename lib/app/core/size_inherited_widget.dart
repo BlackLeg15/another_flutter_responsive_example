@@ -8,7 +8,7 @@ class SizeInheritedWidget extends InheritedWidget {
 
   @override
   bool updateShouldNotify(covariant SizeInheritedWidget oldWidget) {
-    return true;
+    return oldWidget.sizeConfig != sizeConfig;
   }
 
   static SizeInheritedWidget of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<SizeInheritedWidget>()!;

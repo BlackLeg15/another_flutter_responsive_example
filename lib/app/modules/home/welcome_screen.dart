@@ -17,7 +17,6 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           children: const <Widget>[
             Expanded(
-              flex: 4,
               child: Align(alignment: Alignment.center, child: WelcomeContentWidget()),
             ),
             ButtonWidget(),
@@ -36,11 +35,8 @@ class WelcomeContentWidget extends StatelessWidget {
     final sizeConfig = SizeInheritedWidget.of(context).sizeConfig;
     return Center(
       child: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Expanded(
-              flex: 1,
               child: Padding(
                 padding: EdgeInsets.only(top: 1 * sizeConfig.heightMultiplier),
                 child: Align(
@@ -58,11 +54,10 @@ class WelcomeContentWidget extends StatelessWidget {
             flex: 3,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 1 * sizeConfig.heightMultiplier),
-              child: const FlutterLogo(size: 400),
+              child: FlutterLogo(size: 49.38 * sizeConfig.imageSizeMultiplier),
             ),
           ),
           Expanded(
-            flex: 1,
             child: Align(
               alignment: Alignment.topCenter,
               child: FittedBox(
