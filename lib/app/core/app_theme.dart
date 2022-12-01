@@ -12,9 +12,10 @@ class AppTheme {
   static const Color subTitleTextColor = Color(0xFF9F988F);
 
   ThemeData get lightTheme => ThemeData(
-    scaffoldBackgroundColor: AppTheme.appBackgroundColor,
+      scaffoldBackgroundColor: appBackgroundColor,
     brightness: Brightness.light,
     textTheme: lightTextTheme,
+      navigationBarTheme: const NavigationBarThemeData(backgroundColor: topBarBackgroundColor)
   );
 
   ThemeData get darkTheme => ThemeData(

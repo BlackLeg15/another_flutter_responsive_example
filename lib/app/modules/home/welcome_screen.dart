@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/app_theme.dart';
 import '../../core/size_inherited_widget.dart';
 import '../../core/strings.dart';
 
@@ -96,19 +95,19 @@ class ButtonWidget extends StatelessWidget {
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(4 * sizeConfig.heightMultiplier),
             ),
-            color: AppTheme.topBarBackgroundColor,
+            color: Theme.of(context).navigationBarTheme.backgroundColor,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
-                flex: 1,
                 child: Icon(
                   Icons.chevron_left,
                   size: 6 * sizeConfig.imageSizeMultiplier,
                 ),
               ),
               Expanded(
+                flex: 3,
                 child: Text(
                   Strings.getStartedButton,
                   style: Theme.of(context).textTheme.button,
@@ -117,7 +116,6 @@ class ButtonWidget extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 1,
                 child: Icon(
                   Icons.chevron_right,
                   size: 6 * sizeConfig.imageSizeMultiplier,

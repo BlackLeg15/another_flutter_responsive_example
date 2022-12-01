@@ -17,7 +17,6 @@ class AppWidget extends StatelessWidget {
           child: MaterialApp(
             title: 'Flutter Demo',
             theme: AppTheme(textMultiplier: sizeConfig.textMultiplier).lightTheme,
-            //home: const HomePage(title: 'Flutter Demo Home Page'),
             home: const WelcomeScreen(),
           ),
         );
